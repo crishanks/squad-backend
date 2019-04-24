@@ -1,2 +1,3 @@
-class TeamPlayersController < ApplicationController
+class Api::V1::TeamPlayersController < ApplicationController
+
 end
