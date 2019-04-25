@@ -10,6 +10,7 @@
   Player.create(
     team_player_id: rand(1..20),
     name: Faker::Movies::LordOfTheRings.character,
+    image: Faker::Avatar.image,
     height: "5'11",
     position: Faker::Movies::StarWars.specie,
     experience_level: rand(1..10),
