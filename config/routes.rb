@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :team_players
   resources :players
 
+  # post '/players' to: 
+
 end

@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+100.times do
+  Player.create(
+    team_player_id: rand(1..20),
+    name: Faker::Movies::LordOfTheRings.character,
+    height: "5'11",
+    position: Faker::Movies::StarWars.specie,
+    experience_level: rand(1..10),
+    description: Faker::Movies::StarWars.quote
+  )
+end
+
+
+20.times do
+  team_players = []
+  team_players << TeamPlayer.new(Player.all.sample(), organizer: true)
+  rand(3..5).times do
+    team_players << TeamPlayer.new(Player.all.sample(1), organizer: false)
+  end
+  
+  Team.create(
+    team_players: team_players,
+    name: Faker::Movies::HarryPotter.house,
+    location: Faker::Games::Pokemon.location,
+    league: Faker::Games::SuperSmashBros.stage
+  )
+end
