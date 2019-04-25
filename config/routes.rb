@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :players
+      post '/login', to: 'auth#create'
+      post '/players', to: 'players#create'
+      get '/profile', to: 'players#profile'
     end
   end
 
@@ -21,7 +24,5 @@ Rails.application.routes.draw do
   resources :teams
   resources :team_players
   resources :players
-
-  # post '/players' to: 
 
 end
