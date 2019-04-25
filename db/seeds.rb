@@ -20,11 +20,11 @@ end
 
 20.times do
   team_players = []
-  team_players << TeamPlayer.new(Player.all.sample(), organizer: true)
+  team_players << TeamPlayer.new(player: Player.all.sample, organizer: true)
   rand(3..5).times do
-    team_players << TeamPlayer.new(Player.all.sample(1), organizer: false)
+    team_players << TeamPlayer.new(player: Player.all.sample, organizer: false)
   end
-  
+
   Team.create(
     team_players: team_players,
     name: Faker::Movies::HarryPotter.house,
