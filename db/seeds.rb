@@ -14,7 +14,7 @@
     height: "5'11",
     position: Faker::Movies::StarWars.specie,
     experience_level: rand(1..10),
-    description: Faker::Movies::StarWars.quote
+    description: Faker::TvShows::MichaelScott.quote
   )
 end
 
