@@ -11,6 +11,7 @@
     team_player_id: rand(1..20),
     name: Faker::Movies::LordOfTheRings.character,
     image: Faker::Avatar.image,
+    showTeams: false,
     username: Faker::Movies::Ghostbusters.actor,
     password: "password",
     height: "5'11",
