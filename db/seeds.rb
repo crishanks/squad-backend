@@ -11,12 +11,13 @@
     team_player_id: rand(1..20),
     name: Faker::Movies::LordOfTheRings.character,
     username: Faker::Movies::Ghostbusters.actor,
-    password_digest: nil,
+    password: "password",
     height: "5'11",
     position: Faker::Movies::StarWars.specie,
     experience_level: rand(1..10),
     description: Faker::TvShows::MichaelScott.quote
   )
+
 end
 
 
