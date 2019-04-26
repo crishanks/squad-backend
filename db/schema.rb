@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 2019_04_24_161654) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.integer "team_player_id"
     t.string "name"
     t.string "image"
+    t.string "username"
+    t.string "password_digest"
     t.string "height"
     t.string "position"
     t.integer "experience_level"
     t.text "description"
+    t.integer "team_player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
