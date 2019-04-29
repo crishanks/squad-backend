@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_04_24_161251) do
     t.string "image"
     t.string "username"
     t.string "password_digest"
-    t.boolean "show_teams", default: false
     t.string "height"
     t.string "position"
     t.integer "experience_level"

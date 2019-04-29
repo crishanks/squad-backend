@@ -11,7 +11,6 @@
     team_player_id: rand(1..20),
     name: Faker::Movies::LordOfTheRings.character,
     image: Faker::Avatar.image,
-    show_teams: false,
     username: Faker::Movies::HarryPotter.character,
     password: "password",
     height: "5'11",

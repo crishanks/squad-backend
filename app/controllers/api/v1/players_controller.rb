@@ -16,11 +16,10 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def create
-    puts 'in players create'
-    @player = Player.find_or_create_by(player_params)
+    @player = Player.create(player_params)
     if @player.valid?
       @token = encode_token(player_id: @player.id)
-      render json: {player: PlayerSerializer.new(@player), jwt: @token}, status: :created
+      render json: {player: Api::V1::PlayerSerializer.new(@player), jwt: @token}, status: :created
     else
       render json: {error: 'failed to create player'}, status: :not_acceptable
     end
@@ -35,6 +34,6 @@ class Api::V1::PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:team_player_id, :name, :height, :position, :experience_level, :description, :username, :password_digest, :show_teams, :image)
+    params.require(:player).permit(:team_player_id, :name, :height, :position, :experience_level, :description, :username, :password, :show_teams, :image)
   end
 end
