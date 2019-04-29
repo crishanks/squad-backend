@@ -10,25 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_161654) do
+ActiveRecord::Schema.define(version: 2019_04_24_161251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "images", force: :cascade do |t|
-    t.integer "player_id"
-    t.string "image_url"
-    t.boolean "is_profile_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.string "username"
     t.string "password_digest"
-    t.boolean "showTeams", default: false
+    t.boolean "show_teams", default: false
     t.string "height"
     t.string "position"
     t.integer "experience_level"
