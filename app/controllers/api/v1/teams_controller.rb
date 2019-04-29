@@ -8,11 +8,12 @@ class Api::V1::TeamsController < ApplicationController
 
   def create
     @team = Team.create(team_params)
+    render json: @team
   end
 
   private
 
   def team_params
-    params.require(:team).permit(:name, :location, :league, :player_id)
+    params.require(:team).permit(:name, :location, :league)
   end
 end
