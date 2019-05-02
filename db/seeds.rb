@@ -11,7 +11,7 @@
     team_player_id: rand(1..20),
     name: Faker::Movies::LordOfTheRings.character,
     age: rand(18...40),
-    image: "/Users/chanks5/Documents/Flatiron/Module_5/squad-frontend/src/assets/images/steve.jpg",
+    image: nil,
     username: Faker::Movies::HarryPotter.character,
     password: "password",
     height: "5'11",
