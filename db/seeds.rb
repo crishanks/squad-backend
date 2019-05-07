@@ -7,15 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 100.times do
+  images = ["http://hw-img.datpiff.com/mc3f2dbf/SKYWLKR_John_Stockton_Instrumentals-front-large.jpg", "http://25.media.tumblr.com/tumblr_ljsil1uX101qj12oco1_500.jpg", "https://i.pinimg.com/originals/2f/5b/00/2f5b00ab69af9deaf09fb8da4c248261.jpg", "https://i1.sndcdn.com/artworks-000428448255-hihteq-t500x500.jpg", "https://i.pinimg.com/originals/46/7f/2b/467f2bf0494d376fb12eab614ecb9f05.jpg", "https://m.media-amazon.com/images/I/91YPGXJKzpL._SS500_.jpg", "https://www.caa.com/sites/default/files/styles/square/public/2018-06/CAA-Basketball-DwyaneWade.jpg?itok=1_JudmgF", "http://www.thumpernewman.com/Dirk%20Nowitzki.jpg", "http://eastbridge-sb.com/wp-content/uploads/2019/01/James-Harden-five-500x500.jpg", "https://cdn.sportsadnet.com/uploads/2019/02/USATSI_12153436_168387294_lowres-500x500.jpg", "https://www.proballers.com/ul/news/5c4caf0bc0d0rudy-gobert.jpg"]
+
+  positions = ["Shooting Guard", "Point Guard", "Power Forward", "Center", "Small Forward"]
+
+  heights = ["6'11", "6'2", "5'9", "5'7", "6'4", "6'", "6'2", "5'2", "5'11"]
+
   Player.create(
     team_player_id: rand(1..20),
-    name: Faker::Movies::LordOfTheRings.character,
+    name: Faker::Football.player,
     age: rand(18...40),
-    image: nil,
+    image: images.sample(),
     username: Faker::Movies::HarryPotter.character,
     password: "password",
-    height: "5'11",
-    position: Faker::Movies::StarWars.specie,
+    height: heights.sample(),
+    position: positions.sample(),
     experience_level: rand(1..10),
     description: Faker::TvShows::MichaelScott.quote
   )
