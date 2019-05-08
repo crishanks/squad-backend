@@ -10,7 +10,6 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.string :position
       t.integer :experience_level
       t.text :description
-      t.integer :team_player_id
       t.timestamps
     end
   end

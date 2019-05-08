@@ -14,7 +14,6 @@
   heights = ["6'11", "6'2", "5'9", "5'7", "6'4", "6'", "6'2", "5'2", "5'11"]
 
   Player.create(
-    team_player_id: rand(1..20),
     name: Faker::Football.player,
     age: rand(18...40),
     image: images.sample(),
@@ -28,18 +27,29 @@
 
 end
 
-
-20.times do
-  team_players = []
-  team_players << TeamPlayer.new(player: Player.all.sample, organizer: true)
-  rand(3..5).times do
-    team_players << TeamPlayer.new(player: Player.all.sample, organizer: false)
+Player.all.each do |player|
+  5.times do 
+    Match.create(player_id: player.id, player_match_id: Player.all.sample().id)
   end
 
-  Team.create(
-    team_players: team_players,
-    name: Faker::Movies::HarryPotter.house,
-    location: Faker::Games::Pokemon.location,
-    league: Faker::Games::SuperSmashBros.stage
-  )
+  30.times do
+    PotentialMatch.create(player_id: player.id, player_match_id: Player.all.sample().id)
+  end
 end
+
+
+
+# 20.times do
+#   team_players = []
+#   team_players << TeamPlayer.new(player: Player.all.sample, organizer: true)
+#   rand(3..5).times do
+#     team_players << TeamPlayer.new(player: Player.all.sample, organizer: false)
+#   end
+
+#   Team.create(
+#     team_players: team_players,
+#     name: Faker::Movies::HarryPotter.house,
+#     location: Faker::Games::Pokemon.location,
+#     league: Faker::Games::SuperSmashBros.stage
+#   )
+# end

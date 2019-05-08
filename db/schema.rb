@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_24_161251) do
+ActiveRecord::Schema.define(version: 2019_05_08_195311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "player_match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
@@ -25,23 +32,13 @@ ActiveRecord::Schema.define(version: 2019_04_24_161251) do
     t.string "position"
     t.integer "experience_level"
     t.text "description"
-    t.integer "team_player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "team_players", force: :cascade do |t|
+  create_table "potential_matches", force: :cascade do |t|
     t.integer "player_id"
-    t.integer "team_id"
-    t.boolean "organizer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teams", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.string "league"
+    t.integer "player_match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

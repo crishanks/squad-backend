@@ -4,6 +4,6 @@ class Player < ApplicationRecord
   validates :username, uniqueness: {case_sensitive: false}
 
   # Relationships
-  has_many :team_players
-  has_many :teams, through: :team_players
+  has_many :potential_matches
+  has_many :matches
 end

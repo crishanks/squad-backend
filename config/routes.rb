@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :teams
-      post '/teams', to: 'teams#create'
+      resources :matches
     end
   end
-
+  
   namespace :api do
     namespace :v1 do
-      resources :team_players
+      resources :potential_matches
     end
   end
 
@@ -22,8 +21,6 @@ Rails.application.routes.draw do
   end
 
   # Resources
-  resources :teams
-  resources :team_players
   resources :players
 
 end

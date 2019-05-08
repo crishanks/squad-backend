@@ -2,10 +2,8 @@
 
 one:
   player_id: 1
-  team_id: 1
-  organizer: false
+  player_match_id: 1
 
 two:
   player_id: 1
-  team_id: 1
-  organizer: false
+  player_match_id: 1
